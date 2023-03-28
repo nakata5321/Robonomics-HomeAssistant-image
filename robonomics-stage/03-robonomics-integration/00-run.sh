@@ -26,11 +26,11 @@ on_chroot << EOF
   chown homeassistant:homeassistant /home/homeassistant/.homeassistant/custom_components
 
   su homeassistant -c "cd /home/homeassistant/.homeassistant/custom_components &&
-  wget https://github.com/airalab/homeassistant-robonomics-integration/archive/refs/tags/1.4.1.zip &&
-  unzip 1.4.1.zip &&
-  mv homeassistant-robonomics-integration-1.4.1/custom_components/robonomics .
-  rm -r homeassistant-robonomics-integration-1.4.1
-  rm 1.4.1.zip "
+  wget https://github.com/airalab/homeassistant-robonomics-integration/archive/refs/tags/1.5.0.zip &&
+  unzip 1.5.0.zip &&
+  mv homeassistant-robonomics-integration-1.5.0/custom_components/robonomics .
+  rm -r homeassistant-robonomics-integration-1.5.0
+  rm 1.5.0.zip "
 
   cd /home/${FIRST_USER_NAME}
 
