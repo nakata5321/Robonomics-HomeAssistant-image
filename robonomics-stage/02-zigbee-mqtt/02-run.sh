@@ -9,4 +9,23 @@ on_chroot << EOF
 
   cd /opt/zigbee2mqtt
   su homeassistant -c "npm ci"
+
+  echo "[Unit]
+Description=zigbee2mqtt
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/npm start
+WorkingDirectory=/opt/zigbee2mqtt
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=homeassistant
+
+[Install]
+WantedBy=multi-user.target
+  " | tee /etc/systemd/system/zigbee2mqtt.service
+
+  systemctl enable zigbee2mqtt.service
+
 EOF
