@@ -19,6 +19,7 @@ ExecStart=/usr/bin/npm start
 WorkingDirectory=/opt/zigbee2mqtt
 StandardOutput=inherit
 StandardError=inherit
+RestartSec=15
 Restart=always
 User=homeassistant
 
