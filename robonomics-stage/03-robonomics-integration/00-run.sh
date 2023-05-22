@@ -21,7 +21,7 @@ on_chroot << EOF
 
   cd /srv/homeassistant
 
-  su homeassistant -c "source bin/activate && pip3 install robonomics-interface~=1.6.0"
+  su homeassistant -c "source bin/activate && pip3 install robonomics-interface~=1.6"
 
   install -d  /home/homeassistant/.homeassistant/custom_components
   chown homeassistant:homeassistant /home/homeassistant/.homeassistant/custom_components
@@ -30,11 +30,11 @@ on_chroot << EOF
   chown homeassistant:homeassistant /home/homeassistant/.homeassistant/.storage
 
   su homeassistant -c "cd /home/homeassistant/.homeassistant/custom_components &&
-  wget https://github.com/airalab/homeassistant-robonomics-integration/archive/refs/tags/1.5.3.zip &&
-  unzip 1.5.3.zip &&
-  mv homeassistant-robonomics-integration-1.5.3/custom_components/robonomics . &&
-  rm -r homeassistant-robonomics-integration-1.5.3 &&
-  rm 1.5.3.zip "
+  wget https://github.com/airalab/homeassistant-robonomics-integration/archive/refs/tags/1.5.6.zip &&
+  unzip 1.5.6.zip &&
+  mv homeassistant-robonomics-integration-1.5.6/custom_components/robonomics . &&
+  rm -r homeassistant-robonomics-integration-1.5.6 &&
+  rm 1.5.6.zip "
 
   cd /home/${FIRST_USER_NAME}
 
