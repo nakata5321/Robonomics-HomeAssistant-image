@@ -5,6 +5,7 @@ on_chroot << EOF
   echo "[Unit]
   Description=Home Assistant
   After=network-online.target
+  After=ipfs-daemon.service
   [Service]
   Type=simple
   Restart=on-failure
@@ -16,7 +17,7 @@ on_chroot << EOF
   WantedBy=multi-user.target
   " | tee /etc/systemd/system/home-assistant@homeassistant.service
 
-  #systemctl enable home-assistant@homeassistant.service
+  systemctl enable home-assistant@homeassistant.service
 
   cd /srv/homeassistant
 
@@ -24,6 +25,9 @@ on_chroot << EOF
 
   install -d  /home/homeassistant/.homeassistant/custom_components
   chown homeassistant:homeassistant /home/homeassistant/.homeassistant/custom_components
+
+  install -d  /home/homeassistant/.homeassistant/.storage
+  chown homeassistant:homeassistant /home/homeassistant/.homeassistant/.storage
 
   su homeassistant -c "cd /home/homeassistant/.homeassistant/custom_components &&
   wget https://github.com/airalab/homeassistant-robonomics-integration/archive/refs/tags/1.5.3.zip &&
