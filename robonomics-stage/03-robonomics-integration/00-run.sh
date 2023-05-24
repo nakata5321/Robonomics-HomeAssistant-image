@@ -5,7 +5,6 @@ on_chroot << EOF
   echo "[Unit]
   Description=Home Assistant
   After=network-online.target
-  After=ipfs-daemon.service
   [Service]
   Type=simple
   Restart=on-failure
@@ -17,7 +16,6 @@ on_chroot << EOF
   WantedBy=multi-user.target
   " | tee /etc/systemd/system/home-assistant@homeassistant.service
 
-  systemctl enable home-assistant@homeassistant.service
 
   cd /srv/homeassistant
 

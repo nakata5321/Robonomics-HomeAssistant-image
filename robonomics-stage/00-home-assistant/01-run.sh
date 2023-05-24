@@ -22,4 +22,7 @@ on_chroot << EOF
     install -d  /home/homeassistant/.homeassistant/
     chown homeassistant:homeassistant /home/homeassistant/.homeassistant/
 
+    install -d  /home/homeassistant/.homeassistant/media/
+    chown homeassistant:homeassistant /home/homeassistant/.homeassistant/media/
+
 EOF
