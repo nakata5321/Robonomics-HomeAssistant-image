@@ -34,9 +34,5 @@ on_chroot << EOF
   rm -r homeassistant-robonomics-integration-1.5.7 &&
   rm 1.5.7.zip "
 
-  cd /home/${FIRST_USER_NAME}
-
-  su ${FIRST_USER_NAME} -c "rm -r go-ipfs/"
-
   passwd -e ${FIRST_USER_NAME}
 EOF

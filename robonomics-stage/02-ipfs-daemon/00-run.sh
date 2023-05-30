@@ -39,4 +39,6 @@ on_chroot << EOF
   " | tee /etc/systemd/system/ipfs-daemon.service
 
   systemctl enable ipfs-daemon.service
+
+  su ipfsdaemon -c "rm -r go-ipfs/"
 EOF
