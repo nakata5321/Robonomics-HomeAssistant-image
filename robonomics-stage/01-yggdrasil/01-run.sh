@@ -17,7 +17,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/conf_start.sh
+ExecStart=/usr/local/bin/configuration_first_start.sh
 
 [Install]
 WantedBy=multi-user.target
