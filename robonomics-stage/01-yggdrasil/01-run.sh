@@ -8,6 +8,7 @@ on_chroot << EOF
     rm /etc/yggdrasil.conf
 
     curl -O https://raw.githubusercontent.com/nakata5321/robonomics-hass-utils/main/raspberry_pi/configuration_first_start.sh
+    curl -O https://raw.githubusercontent.com/airalab/robonomics-hass-utils/main/raspberry_pi/input.json
     chmod a+x configuration_first_start.sh
     mv configuration_first_start.sh /usr/local/bin/
 
