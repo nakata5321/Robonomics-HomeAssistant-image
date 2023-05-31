@@ -7,4 +7,22 @@ on_chroot << EOF
     rm yggdrasil-0.4.7-arm64.deb
     rm /etc/yggdrasil.conf
 
+    curl -O https://raw.githubusercontent.com/nakata5321/robonomics-hass-utils/main/raspberry_pi/configuration_first_start.sh
+    chmod a+x configuration_first_start.sh
+    mv configuration_first_start.sh /usr/local/bin/
+
+    echo "[Unit]
+Description=IPFS Daemon Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/conf_start.sh
+
+[Install]
+WantedBy=multi-user.target
+
+  " | tee /etc/systemd/system/configuration.service
+
+  systemctl enable configuration.service
 EOF

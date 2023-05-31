@@ -17,24 +17,23 @@ on_chroot << EOF
 
 
   cd /home/ipfsdaemon
-  su ipfsdaemon -c "curl -O https://raw.githubusercontent.com/nakata5321/robonomics-hass-utils/main/raspberry_pi/first_start.sh"
-  chmod a+x first_start.sh
-  mv first_start.sh /usr/local/bin/
+  su ipfsdaemon -c "curl -O https://raw.githubusercontent.com/nakata5321/robonomics-hass-utils/main/raspberry_pi/ipfs_first_start.sh"
+  chmod a+x ipfs_first_start.sh
+  mv ipfs_first_start.sh /usr/local/bin/
 
 
   echo "[Unit]
-  Description=IPFS Daemon Service
+Description=IPFS Daemon Service
+After=network.target
 
-  After=network.target
+[Service]
+Type=simple
+ExecStartPre=/usr/local/bin/ipfs_first_start.sh
+ExecStart=/usr/local/bin/ipfs daemon --enable-gc
+User=ipfsdaemon
 
-  [Service]
-  Type=simple
-  ExecStartPre=/usr/local/bin/first_start.sh
-  ExecStart=/usr/local/bin/ipfs daemon --enable-gc
-  User=ipfsdaemon
-
-  [Install]
-  WantedBy=multi-user.target
+[Install]
+WantedBy=multi-user.target
 
   " | tee /etc/systemd/system/ipfs-daemon.service
 
