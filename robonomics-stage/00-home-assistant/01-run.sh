@@ -13,11 +13,11 @@ on_chroot << EOF
 
     su homeassistant -c "python3 -m venv ."
 
-    su homeassistant -c bash -c "source bin/activate && pip3 install wheel"
+    su homeassistant -c bash -c "source bin/activate && pip3 install wheel~=0.41.0"
 
-    su homeassistant -c bash -c "source bin/activate && pip3 install sqlalchemy fnvhash aiodiscover"
+    su homeassistant -c bash -c "source bin/activate && pip3 install sqlalchemy~=2.0.15 fnvhash~=0.1.0 aiodiscover~=1.4.16"
 
-    su homeassistant -c bash -c "source bin/activate && pip3 install homeassistant==2023.7.3 psutil-home-assistant"
+    su homeassistant -c bash -c "source bin/activate && pip3 install homeassistant==2023.7.3 psutil-home-assistant~=0.0.1"
 
     install -d  /home/homeassistant/.homeassistant/
     chown homeassistant:homeassistant /home/homeassistant/.homeassistant/
