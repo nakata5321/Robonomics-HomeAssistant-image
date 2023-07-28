@@ -23,11 +23,11 @@ WantedBy=multi-user.target
 
   su homeassistant -c "source bin/activate && pip3 install robonomics-interface~=1.6"
 
-  install -d  /home/homeassistant/.homeassistant/custom_components
-  chown homeassistant:homeassistant /home/homeassistant/.homeassistant/custom_components
+  install -d  /srv/homeassistant/.homeassistant/custom_components
+  chown homeassistant:homeassistant /srv/homeassistant/.homeassistant/custom_components
 
-  install -d  /home/homeassistant/.homeassistant/.storage
-  chown homeassistant:homeassistant /home/homeassistant/.homeassistant/.storage
+  install -d  /srv/homeassistant/.homeassistant/.storage
+  chown homeassistant:homeassistant /srv/homeassistant/.homeassistant/.storage
 
   su homeassistant -c "cd /home/homeassistant/.homeassistant/custom_components &&
   wget https://github.com/airalab/homeassistant-robonomics-integration/archive/refs/tags/1.5.9.zip &&
