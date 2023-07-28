@@ -9,14 +9,14 @@ After=network-online.target
 [Service]
 Type=simple
 Restart=on-failure
-User=%i
-WorkingDirectory=/srv/%i/
-ExecStart=/srv/homeassistant/bin/hass -c "/home/%i/.homeassistant"
-Environment="PATH=/srv/%i/bin"
+User=homeassistant
+WorkingDirectory=/srv/homeassistant/
+ExecStart=/srv/homeassistant/bin/hass -c "/srv/homeassistant/.homeassistant"
+Environment="PATH=/srv/homeassistant/bin"
 
 [Install]
 WantedBy=multi-user.target
-  " | tee /etc/systemd/system/home-assistant@homeassistant.service
+  " | tee /etc/systemd/system/home-assistant.service
 
 
   cd /srv/homeassistant

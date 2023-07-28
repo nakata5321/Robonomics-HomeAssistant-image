@@ -2,12 +2,7 @@
 
 on_chroot << EOF
 
-    adduser --disabled-password --gecos "" homeassistant
-    usermod -a -G tty homeassistant
-    usermod -a -G dialout homeassistant
-
-    install -d  /srv/homeassistant
-    chown homeassistant:homeassistant /srv/homeassistant
+    useradd -rm homeassistant -d /srv/homeassistant -G dialout,tty
 
     cd /srv/homeassistant
 
