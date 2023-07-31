@@ -4,7 +4,7 @@ on_chroot << EOF
 
   useradd -rm ipfsdaemon -d /var/lib/ipfsdaemon
 
-  su ipfsdaemon -c "cd ~"
+  cd /var/lib/ipfsdaemon/
   su ipfsdaemon -c "wget https://dist.ipfs.io/go-ipfs/v0.21.0/go-ipfs_v0.21.0_linux-arm64.tar.gz"
   su ipfsdaemon -c "tar -xvzf go-ipfs_v0.21.0_linux-arm64.tar.gz"
   su ipfsdaemon -c "rm go-ipfs_v0.21.0_linux-arm64.tar.gz"
@@ -16,7 +16,7 @@ on_chroot << EOF
   su ipfsdaemon -c "ipfs bootstrap add /dns4/3.pubsub.aira.life/tcp/443/wss/ipfs/QmWZSKTEQQ985mnNzMqhGCrwQ1aTA6sxVsorsycQz9cQrw"
 
 
-  su ipfsdaemon -c "cd ~"
+  cd /var/lib/ipfsdaemon/
   su ipfsdaemon -c "curl -O https://raw.githubusercontent.com/nakata5321/robonomics-hass-utils/main/raspberry_pi/ipfs_first_start.sh"
   chmod a+x ipfs_first_start.sh
   mv ipfs_first_start.sh /usr/local/bin/
