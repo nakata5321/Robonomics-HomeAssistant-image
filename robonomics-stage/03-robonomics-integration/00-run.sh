@@ -29,7 +29,7 @@ WantedBy=multi-user.target
   install -d  /srv/homeassistant/.homeassistant/.storage
   chown homeassistant:homeassistant /srv/homeassistant/.homeassistant/.storage
 
-  su homeassistant -c "cd /home/homeassistant/.homeassistant/custom_components &&
+  su homeassistant -c "cd /srv/homeassistant/.homeassistant/custom_components &&
   wget https://github.com/airalab/homeassistant-robonomics-integration/archive/refs/tags/1.5.9.zip &&
   unzip 1.5.9.zip &&
   mv homeassistant-robonomics-integration-1.5.9/custom_components/robonomics . &&
