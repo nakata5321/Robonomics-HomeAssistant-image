@@ -2,12 +2,7 @@
 
 on_chroot << EOF
 
-    adduser --disabled-password --gecos "" homeassistant
-    usermod -a -G tty homeassistant
-    usermod -a -G dialout homeassistant
-
-    install -d  /srv/homeassistant
-    chown homeassistant:homeassistant /srv/homeassistant
+    useradd -rm homeassistant -d /srv/homeassistant -G dialout,tty
 
     cd /srv/homeassistant
 
@@ -17,12 +12,12 @@ on_chroot << EOF
 
     su homeassistant -c bash -c "source bin/activate && pip3 install sqlalchemy~=2.0.15 fnvhash~=0.1.0 aiodiscover~=1.4.16"
 
-    su homeassistant -c bash -c "source bin/activate && pip3 install homeassistant==2023.7.3 psutil-home-assistant~=0.0.1"
+    su homeassistant -c bash -c "source bin/activate && pip3 install homeassistant==2023.5.4 psutil-home-assistant~=0.0.1"
 
-    install -d  /home/homeassistant/.homeassistant/
-    chown homeassistant:homeassistant /home/homeassistant/.homeassistant/
+    install -d  /srv/homeassistant/.homeassistant/
+    chown homeassistant:homeassistant /srv/homeassistant/.homeassistant/
 
-    install -d  /home/homeassistant/.homeassistant/media/
-    chown homeassistant:homeassistant /home/homeassistant/.homeassistant/media/
+    install -d  /srv/homeassistant/.homeassistant/media/
+    chown homeassistant:homeassistant /srv/homeassistant/.homeassistant/media/
 
 EOF
