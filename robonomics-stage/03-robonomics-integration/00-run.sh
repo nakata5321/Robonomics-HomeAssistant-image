@@ -21,7 +21,7 @@ WantedBy=multi-user.target
 
   cd /srv/homeassistant
 
-  su homeassistant -c "source bin/activate && pip3 install robonomics-interface~=1.6"
+  su homeassistant -c "source bin/activate && pip3 install robonomics-interface"
 
   install -d  /srv/homeassistant/.homeassistant/custom_components
   chown homeassistant:homeassistant /srv/homeassistant/.homeassistant/custom_components
