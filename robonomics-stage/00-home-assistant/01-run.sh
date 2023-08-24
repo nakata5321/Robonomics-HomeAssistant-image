@@ -12,7 +12,7 @@ on_chroot << EOF
 
     su homeassistant -c bash -c "source bin/activate && pip3 install sqlalchemy~=2.0.15 fnvhash~=0.1.0 aiodiscover~=1.4.16 webrtcvad~=2.0.10"
 
-    su homeassistant -c bash -c "source bin/activate && pip3 install homeassistant==2023.8.2 psutil-home-assistant~=0.0.1"
+    su homeassistant -c bash -c "source bin/activate && pip3 install homeassistant==2023.8.4 psutil-home-assistant~=0.0.1"
 
     install -d  /srv/homeassistant/.homeassistant/
     chown homeassistant:homeassistant /srv/homeassistant/.homeassistant/
