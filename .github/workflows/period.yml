@@ -2,7 +2,7 @@ name: Build Robonomics Home Assistant Image every month
 
 on:
    schedule:
-     - cron:  '0 0 5 * *'
+     - cron:  '0 0 1,15 * *'
 
 jobs:
   build:

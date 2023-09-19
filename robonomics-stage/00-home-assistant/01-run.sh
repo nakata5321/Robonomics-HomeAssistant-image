@@ -10,7 +10,7 @@ on_chroot << EOF
 
     su homeassistant -c bash -c "source bin/activate && pip3 install wheel"
 
-    su homeassistant -c bash -c "source bin/activate && pip3 install sqlalchemy fnvhash aiodiscover"
+    su homeassistant -c bash -c "source bin/activate && pip3 install sqlalchemy fnvhash aiodiscover webrtcvad"
 
     su homeassistant -c bash -c "source bin/activate && pip3 install homeassistant psutil-home-assistant"
 
