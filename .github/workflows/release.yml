@@ -30,7 +30,7 @@ jobs:
           
 
       - name: build image
-        uses: usimd/pi-gen-action@v1
+        uses: usimd/pi-gen-action@v1.6.0
         id: build
         with:
           # Compression to apply on final image (either "none", "zip", "xz" or "gz").
