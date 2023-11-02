@@ -1,4 +1,4 @@
-name: Build Robonomics Home Assistant Image every month
+name: period testing Robonomics Home Assistant Image every month
 
 on:
    schedule:
