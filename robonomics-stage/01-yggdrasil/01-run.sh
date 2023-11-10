@@ -5,7 +5,7 @@ on_chroot << EOF
     wget https://github.com/yggdrasil-network/yggdrasil-go/releases/download/v0.5.2/yggdrasil-0.5.2-arm64.deb
     dpkg -i yggdrasil-0.5.2-arm64.deb
     rm yggdrasil-0.5.2-arm64.deb
-    rm /etc/yggdrasil.conf
+    rm /etc/yggdrasil/yggdrasil.conf
 
     curl -O https://raw.githubusercontent.com/airalab/robonomics-hass-utils/main/raspberry_pi/configuration_first_start.sh
     curl -O https://raw.githubusercontent.com/airalab/robonomics-hass-utils/main/raspberry_pi/input.json
