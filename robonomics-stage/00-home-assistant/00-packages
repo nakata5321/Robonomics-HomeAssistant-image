@@ -10,7 +10,7 @@ zlib1g-dev
 autoconf
 build-essential
 libopenjp2-7
-libtiff5
+libtiff6
 libturbojpeg0-dev
 tzdata
 ffmpeg

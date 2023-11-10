@@ -5,9 +5,9 @@ on_chroot << EOF
   useradd -rm ipfsdaemon -d /var/lib/ipfsdaemon
 
   cd /var/lib/ipfsdaemon/
-  su ipfsdaemon -c "wget https://dist.ipfs.io/go-ipfs/v0.21.0/go-ipfs_v0.21.0_linux-arm64.tar.gz"
-  su ipfsdaemon -c "tar -xvzf go-ipfs_v0.21.0_linux-arm64.tar.gz"
-  su ipfsdaemon -c "rm go-ipfs_v0.21.0_linux-arm64.tar.gz"
+  su ipfsdaemon -c "wget https://dist.ipfs.io/go-ipfs/v0.24.0/go-ipfs_v0.24.0_linux-arm64.tar.gz"
+  su ipfsdaemon -c "tar -xvzf go-ipfs_v0.24.0_linux-arm64.tar.gz"
+  su ipfsdaemon -c "rm go-ipfs_v0.24.0_linux-arm64.tar.gz"
   cd go-ipfs
   bash install.sh
   su ipfsdaemon -c "ipfs init -p local-discovery"
