@@ -19,3 +19,4 @@ liblapack-dev
 libatlas-base-dev
 python3-serial
 curl
+git
