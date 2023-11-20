@@ -25,7 +25,7 @@ jobs:
           
 
       - name: build image
-        uses: nakata5321/pi-gen-action@master
+        uses: usimd/pi-gen-action@v1.7.0
         id: build
         with:
           # Compression to apply on final image (either "none", "zip", "xz" or "gz").
