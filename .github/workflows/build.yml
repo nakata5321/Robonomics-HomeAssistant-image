@@ -19,7 +19,7 @@ jobs:
           chmod +x robonomics-stage/00-docker/03-run.sh
 
       - name: build image
-        uses: nakata5321/pi-gen-action@master
+        uses: usimd/pi-gen-action@v1.8.0
         id: build
         with:
           # Compression to apply on final image (either "none", "zip", "xz" or "gz").
@@ -72,7 +72,7 @@ jobs:
           pi-gen-dir: pi-gen
 
           # GitHub repository to fetch pi-gen from, must be a fork from RPi-Distro/pi-gen.
-          pi-gen-repository: nakata5321/pi-gen
+          pi-gen-repository: RPi-Distro/pi-gen
 
           # Release version of pi-gen to use. This can both be a branch or tag name known in
           # the pi-gen repository.
