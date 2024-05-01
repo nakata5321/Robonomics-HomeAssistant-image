@@ -15,14 +15,8 @@ jobs:
       - name: chmod of files
         run: |
           chmod +x robonomics-stage/prerun.sh &&
-          chmod +x robonomics-stage/00-home-assistant/01-run.sh &&
-          chmod +x robonomics-stage/01-yggdrasil/01-run.sh &&
-          chmod +x robonomics-stage/02-ipfs-daemon/00-run.sh &&
-          chmod +x robonomics-stage/02-mqtt/01-run.sh &&
-          chmod +x robonomics-stage/02-zigbee-mqtt/00-run.sh &&
-          chmod +x robonomics-stage/02-zigbee-mqtt/02-run.sh &&
-          chmod +x robonomics-stage/03-robonomics-integration/00-run.sh
-          
+          chmod +x robonomics-stage/00-docker/01-run.sh &&
+          chmod +x robonomics-stage/00-docker/03-run.sh
 
       - name: build image
         uses: nakata5321/pi-gen-action@master
