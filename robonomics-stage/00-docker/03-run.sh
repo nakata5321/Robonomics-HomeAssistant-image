@@ -62,7 +62,7 @@ ExecStart=/usr/local/bin/dokcer_first_start.sh
 [Install]
 WantedBy=multi-user.target
 
-  " | tee /etc/systemd/system/ 
+  " | tee /etc/systemd/system/robonomics-start.service
 
   systemctl enable robonomics-start.service
 
