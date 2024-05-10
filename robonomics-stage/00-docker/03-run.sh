@@ -32,9 +32,9 @@ IPFS_VERSION=0.27.0
 
     echo "#!/bin/bash
 
-FILE=$HOME/check
+FILE=/srv/homeassistant/check
 
-if [ -f "$FILE" ]; then
+if [ -f $FILE ]; then
     echo "first initialization completed"
     exit 0
 else
@@ -42,11 +42,9 @@ else
 
     cd /srv/homeassistant/home-assistant-web3-build
     bash setup.sh
-    touch "$FILE"
+    touch $FILE
     echo "Docker compose started"
-
 fi
-
     " | tee /srv/homeassistant/dokcer_first_start.sh
 
     chmod a+x dokcer_first_start.sh
@@ -64,7 +62,7 @@ ExecStart=/usr/local/bin/dokcer_first_start.sh
 [Install]
 WantedBy=multi-user.target
 
-  " | tee /etc/systemd/system/robonomics-start.service
+  " | tee /etc/systemd/system/ 
 
   systemctl enable robonomics-start.service
 
