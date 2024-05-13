@@ -32,9 +32,7 @@ IPFS_VERSION=0.27.0
 
     echo '#!/bin/bash
 
-CHECKPATH=/srv/homeassistant/check
-
-if [ -f $CHECKPATH ]; then
+if [ -f /srv/homeassistant/check ]; then
     echo "first initialization completed"
     exit 0
 else
@@ -42,7 +40,7 @@ else
 
     cd /srv/homeassistant/home-assistant-web3-build
     bash setup.sh
-    touch $CHECKPATH
+    touch /srv/homeassistant/check
     echo "Docker compose started"
 fi
     ' | tee /srv/homeassistant/dokcer_first_start.sh
